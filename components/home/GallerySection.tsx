@@ -3,7 +3,7 @@
 import { Reveal } from "@/components/motion/Reveal";
 import { GlowButton } from "@/components/motion/GlowButton";
 import { filesToGalleryItems, type GalleryItem } from "@/lib/gallery-utils";
-import { GalleryGrid } from "@/components/home/GalleryGrid";
+import { GalleryCarousel } from "@/components/home/GalleryCarousel";
 import { useEffect, useState } from "react";
 
 export function GallerySection() {
@@ -67,7 +67,7 @@ export function GallerySection() {
             <p className="font-medium text-slate-200">Loading gallery…</p>
           </div>
         ) : status === "ready" ? (
-          <GalleryGrid items={items} />
+          <GalleryCarousel items={items} />
         ) : (
           <div className="rounded-2xl border border-dashed border-cyan-400/25 bg-white/[0.03] p-10 text-center backdrop-blur-md">
             <p className="font-semibold text-white">No images found in the gallery folder yet.</p>
