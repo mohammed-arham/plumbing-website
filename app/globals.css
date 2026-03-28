@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f5f7ff;
-  --foreground: #0f172a;
+  --background: #020617;
+  --foreground: #e2e8f0;
+  --glass-border: rgba(148, 163, 184, 0.12);
+  --glass-bg: rgba(15, 23, 42, 0.45);
+  --glow-cyan: rgba(34, 211, 238, 0.35);
+  --glow-amber: rgba(251, 191, 36, 0.3);
 }
 
 @theme inline {
@@ -12,19 +16,57 @@
   --font-mono: var(--font-geist-mono);
 }
 
+@keyframes grid-pan {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 44px 44px;
+  }
+}
+
+@keyframes backdrop-blob {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
+  33% {
+    transform: translate3d(3%, -2%, 0) scale(1.04);
+    opacity: 0.92;
+  }
+  66% {
+    transform: translate3d(-2%, 2%, 0) scale(0.98);
+    opacity: 1;
+  }
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
   font-size: 0.95rem;
+  letter-spacing: -0.011em;
 }
 
 @media (min-width: 768px) {
   body {
     font-size: 1rem;
+    letter-spacing: -0.014em;
   }
+}
+
+::selection {
+  background: rgba(59, 130, 246, 0.35);
+  color: #f8fafc;
 }

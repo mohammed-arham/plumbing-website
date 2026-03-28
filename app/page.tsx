@@ -9,23 +9,27 @@ import { Navbar } from "@/components/home/Navbar";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { WhyChooseUsSection } from "@/components/home/WhyChooseUsSection";
+import { PageBackdrop } from "@/components/motion/PageBackdrop";
 
 export default function Home() {
   return (
-    <div className="bg-background text-foreground">
-      <Navbar />
-      <main>
-        <HeroSection />
-        <ServicesSection />
-        <GallerySection />
-        <WhyChooseUsSection />
-        <AboutSection />
-        <TestimonialsSection />
-        <ContactSection />
-      </main>
-      <Footer />
-      <FloatingButtons />
-      <MobileStickyBar />
-    </div>
+    <>
+      <PageBackdrop />
+      <div className="relative z-10 min-h-screen bg-transparent text-slate-100">
+        <Navbar />
+        <main className="pb-28 md:pb-10">
+          <HeroSection />
+          <ServicesSection />
+          <GallerySection />
+          <WhyChooseUsSection />
+          <AboutSection />
+          <TestimonialsSection />
+          <ContactSection />
+        </main>
+        <Footer />
+        <FloatingButtons />
+        <MobileStickyBar />
+      </div>
+    </>
   );
 }
