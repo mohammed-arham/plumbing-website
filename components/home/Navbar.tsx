@@ -37,8 +37,7 @@ export function Navbar() {
             />
           </span>
           <span className="truncate text-sm font-semibold tracking-tight text-white md:text-lg">
-            <span className="block md:hidden">Plumbing</span>
-            <span className="hidden md:block">Plumbing Master</span>
+            Plumbing Master
           </span>
         </Link>
 
