@@ -36,7 +36,7 @@ export function Navbar() {
               sizes="(max-width: 768px) 120px, 150px"
             />
           </span>
-          <span className="truncate text-sm font-semibold tracking-tight text-white md:text-lg">
+          <span className="truncate text-lg md:text-3xl lg:text-4xl font-extrabold tracking-tight text-white">
             Plumbing Master
           </span>
         </Link>

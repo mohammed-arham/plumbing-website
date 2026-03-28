@@ -44,7 +44,11 @@ export function GalleryCarousel({ items }: GalleryCarouselProps) {
     const el = containerRef.current;
     if (!el) return;
     const child = el.children[index] as HTMLElement | undefined;
-    if (child) child.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+    if (!child) return;
+
+    // Calculate the horizontal offset to center the child inside the scroll container.
+    const left = child.offsetLeft - Math.max(0, (el.clientWidth - child.clientWidth) / 2);
+    el.scrollTo({ left, behavior: "smooth" });
   }
 
   useEffect(() => {
